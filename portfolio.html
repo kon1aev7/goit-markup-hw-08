@@ -19,58 +19,97 @@
   <body>
     <header class="page-header">
       <div class="container">
-        <nav class="navigation">
-          <a class="links logo logo--header" href="./index.html" lang="en"
-            ><span class="logo--accent">Web</span>Studio</a
+        <div class="menu__wrapper">
+          <a class="links logo logo--header" href="./index.html" lang="en">
+            <span class="logo--accent">Web</span>Studio
+          </a>
+          <button
+            class="button__menu-open js-open-menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
           >
+            <svg class="icon__menu">
+              <use href="./images/icons.svg#menu_40px"></use>
+            </svg>
+          </button>
+        </div>
 
-          <ul class="lists navigation__items">
-            <li class="navigation__item">
-              <a class="links navigation__link" href="./index.html">Студия</a>
-            </li>
-            <li class="navigation__item">
-              <a
-                class="links navigation__link navigation__link--current"
-                href="./portfolio.html"
-                >Портфолио</a
-              >
-            </li>
-            <li class="navigation__item">
-              <a class="links navigation__link" href="">Контакты</a>
-            </li>
-          </ul>
-        </nav>
+        <div class="menu-container js-menu-container" id="mobile-menu">
+          <button class="button__menu-close js-close-menu">
+            <svg class="icon__menu-close">
+              <use href="./images/icons.svg#menu_close_40px"></use>
+            </svg>
+          </button>
+          <div class="menu__wrapper">
+            <nav class="navigation">
+              <ul class="lists navigation__items">
+                <li class="navigation__item">
+                  <a class="links link__navigation" href="./index.html"
+                    >Студия</a
+                  >
+                </li>
+                <li class="navigation__item">
+                  <a
+                    class="links link__navigation is-current"
+                    href="./portfolio.html"
+                    >Портфолио</a
+                  >
+                </li>
+                <li class="navigation__item">
+                  <a class="links link__navigation" href="">Контакты</a>
+                </li>
+              </ul>
+            </nav>
 
-        <ul class="lists contacts">
-          <li class="contacts__item">
-            <a class="links contacts__link" href="mailto:info@devstudio.com">
-              <svg class="envelope">
-                <use href="./images/symbol-defs.svg#envelope"></use>
-              </svg>
-              info@devstudio.com</a
-            >
-          </li>
-          <li class="contacts__item">
-            <a class="links contacts__link" href="tel:+380961111111">
-              <svg class="smartphone">
-                <use href="./images/symbol-defs.svg#phone"></use>
-              </svg>
-              +38 096 111 11 11</a
-            >
-          </li>
-        </ul>
+            <div class="contacts__thumb">
+              <ul class="lists contacts">
+                <li class="contacts__item">
+                  <a class="links link__contacts" href="tel:+380961111111">
+                    <svg class="smartphone">
+                      <use href="./images/icons.svg#smartphone"></use>
+                    </svg>
+                    +38 096 111 11 11
+                  </a>
+                </li>
+                <li class="contacts__item">
+                  <a
+                    class="links link__contacts mail"
+                    href="mailto:info@devstudio.com"
+                  >
+                    <svg class="envelope">
+                      <use href="./images/icons.svg#envelope"></use>
+                    </svg>
+                    info@devstudio.com
+                  </a>
+                </li>
+              </ul>
+              <ul class="lists social__menu">
+                <li class="social__menu-item">
+                  <a href="" class="links link__social-menu">Instagram</a>
+                </li>
+                <li class="social__menu-item">
+                  <a href="" class="links link__social-menu">Twitter</a>
+                </li>
+                <li class="social__menu-item">
+                  <a href="" class="links link__social-menu">Facebook</a>
+                </li>
+                <li class="social__menu-item">
+                  <a href="" class="links link__social-menu">LinkedIn</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
+
     <main>
       <section class="section">
         <div class="container">
           <h1 class="hidden">Наше портфолио</h1>
           <ul class="lists filter">
             <li class="filter__item">
-              <button
-                class="button__filter button__filter--active"
-                type="button"
-              >
+              <button class="button__filter is-active" type="button">
                 Все
               </button>
             </li>
@@ -90,15 +129,38 @@
 
           <ul class="lists portfolio">
             <li class="portfolio-card">
-              <a class="links" href="">
+              <a class="links link__portfolio" href="">
                 <div class="portfolio-card__aside">
-                  <img
-                    class="images"
-                    src="./images/notebook.jpg"
-                    alt="Ноутбук с изображением карточек людей на экране"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-project1-d.jpg    1x,
+                        ./images/portfolio-project1-d@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project1-t.jpg    1x,
+                        ./images/portfolio-project1-t@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project1-m.jpg    1x,
+                        ./images/portfolio-project1-m@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+
+                    <img
+                      class="images"
+                      src="./images/portfolio-project1-d.jpg"
+                      alt="Ноутбук с изображением карточек людей на экране"
+                    />
+                  </picture>
+
                   <div class="overlay">
                     <p class="overlay__text">
                       Технокряк это современная площадка распространения
@@ -115,15 +177,38 @@
               </a>
             </li>
             <li class="portfolio-card">
-              <a class="links" href="">
+              <a class="links link__portfolio" href="">
                 <div class="portfolio-card__aside">
-                  <img
-                    class="images"
-                    src="./images/basketball.jpg"
-                    alt="Баскетболисты в прыжке, один с мячом, второй в защите"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-project2-d.jpg    1x,
+                        ./images/portfolio-project2-d@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project2-t.jpg    1x,
+                        ./images/portfolio-project2-t@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project2-m.jpg    1x,
+                        ./images/portfolio-project2-m@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+
+                    <img
+                      class="images"
+                      src="./images/portfolio-project2-d.jpg"
+                      alt="Баскетболисты в прыжке, один с мячом, второй в защите"
+                    />
+                  </picture>
+
                   <div class="overlay">
                     <p class="overlay__text">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -137,22 +222,46 @@
                 </div>
                 <div class="portfolio-card__body">
                   <h2 class="portfolio-card__title">
-                    Постер <span lang="en">Orlean vs Golden Star</span>
+                    Постер
+                    <span lang="en">New Orlean vs Golden Star</span>
                   </h2>
                   <p class="portfolio-card__text">Дизайн</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-card">
-              <a class="links" href="">
+              <a class="links link__portfolio" href="">
                 <div class="portfolio-card__aside">
-                  <img
-                    class="images"
-                    src="./images/seafood.jpg"
-                    alt="На фоне рыбы надпись The seafood restaurant"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-project3-d.jpg    1x,
+                        ./images/portfolio-project3-d@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project3-t.jpg    1x,
+                        ./images/portfolio-project3-t@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project3-m.jpg    1x,
+                        ./images/portfolio-project3-m@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+
+                    <img
+                      class="images"
+                      src="./images/portfolio-project3-d.jpg"
+                      alt="На фоне рыбы надпись The seafood restaurant"
+                    />
+                  </picture>
+
                   <div class="overlay">
                     <p class="overlay__text">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -163,22 +272,47 @@
                 </div>
                 <div class="portfolio-card__body">
                   <h2 class="portfolio-card__title">
-                    Ресторан <span lang="en">Seafood</span>
+                    Ресторан
+                    <span lang="en">Seafood</span>
                   </h2>
                   <p class="portfolio-card__text">Приложение</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-card">
-              <a class="links" href="">
+              <a class="links link__portfolio" href="">
                 <div class="portfolio-card__aside">
-                  <img
-                    class="images"
-                    src="./images/headphones.jpg"
-                    alt="Наушники"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-project4-d.jpg    1x,
+                        ./images/portfolio-project4-d@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+
+                    <source
+                      srcset="
+                        ./images/portfolio-project4-t.jpg    1x,
+                        ./images/portfolio-project4-t@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project4-m.jpg    1x,
+                        ./images/portfolio-project4-m@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+
+                    <img
+                      class="images"
+                      src="./images/portfolio-project4-d.jpg"
+                      alt="Наушники"
+                    />
+                  </picture>
+
                   <div class="overlay">
                     <p class="overlay__text">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -189,22 +323,46 @@
                 </div>
                 <div class="portfolio-card__body">
                   <h2 class="portfolio-card__title">
-                    Проект <span lang="en">Prime</span>
+                    Проект
+                    <span lang="en">Prime</span>
                   </h2>
                   <p class="portfolio-card__text">Маркетинг</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-card">
-              <a class="links" href="">
+              <a class="links link__portfolio" href="">
                 <div class="portfolio-card__aside">
-                  <img
-                    class="images"
-                    src="./images/box.jpg"
-                    alt="Коробки белая и картонного цвета с надписями сверху"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-project5-d.jpg    1x,
+                        ./images/portfolio-project5-d@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project5-t.jpg    1x,
+                        ./images/portfolio-project5-t@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project5-m.jpg    1x,
+                        ./images/portfolio-project5-m@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+
+                    <img
+                      class="images"
+                      src="./images/portfolio-project5-d.jpg"
+                      alt="Коробки белая и картонного цвета с надписями сверху"
+                    />
+                  </picture>
+
                   <div class="overlay">
                     <p class="overlay__text">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -215,22 +373,46 @@
                 </div>
                 <div class="portfolio-card__body">
                   <h2 class="portfolio-card__title">
-                    Проект <span lang="en">Boxes</span>
+                    Проект
+                    <span lang="en">Boxes</span>
                   </h2>
                   <p class="portfolio-card__text">Приложение</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-card">
-              <a class="links" href="">
+              <a class="links link__portfolio" href="">
                 <div class="portfolio-card__aside">
-                  <img
-                    class="images"
-                    src="./images/macbook.jpg"
-                    alt="Монитор"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-project6-d.jpg    1x,
+                        ./images/portfolio-project6-d@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project6-t.jpg    1x,
+                        ./images/portfolio-project6-t@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project6-m.jpg    1x,
+                        ./images/portfolio-project6-m@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+
+                    <img
+                      class="images"
+                      src="./images/portfolio-project6-d.jpg"
+                      alt="Монитор"
+                    />
+                  </picture>
+
                   <div class="overlay">
                     <p class="overlay__text">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -248,15 +430,38 @@
               </a>
             </li>
             <li class="portfolio-card">
-              <a class="links" href="">
+              <a class="links link__portfolio" href="">
                 <div class="portfolio-card__aside">
-                  <img
-                    class="images"
-                    src="./images/journal.jpg"
-                    alt="Книга в развернутом виде"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-project7-d.jpg    1x,
+                        ./images/portfolio-project7-d@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project7-t.jpg    1x,
+                        ./images/portfolio-project7-t@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project7-m.jpg    1x,
+                        ./images/portfolio-project7-m@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+
+                    <img
+                      class="images"
+                      src="./images/portfolio-project7-d.jpg"
+                      alt="Книга в развернутом виде"
+                    />
+                  </picture>
+
                   <div class="overlay">
                     <p class="overlay__text">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -267,22 +472,46 @@
                 </div>
                 <div class="portfolio-card__body">
                   <h2 class="portfolio-card__title">
-                    Издание <span lang="en">Limited Edition</span>
+                    Издание
+                    <span lang="en">Limited Edition</span>
                   </h2>
                   <p class="portfolio-card__text">Дизайн</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-card">
-              <a class="links" href="">
+              <a class="links link__portfolio" href="">
                 <div class="portfolio-card__aside">
-                  <img
-                    class="images"
-                    src="./images/lab.jpg"
-                    alt="Бирка с надписью: Lab El Tag"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-project8-d.jpg    1x,
+                        ./images/portfolio-project8-d@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project8-t.jpg    1x,
+                        ./images/portfolio-project8-t@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project8-m.jpg    1x,
+                        ./images/portfolio-project8-m@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+
+                    <img
+                      class="images"
+                      src="./images/portfolio-project8-d.jpg"
+                      alt="Бирка с надписью: Lab El Tag"
+                    />
+                  </picture>
+
                   <div class="overlay">
                     <p class="overlay__text">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -293,22 +522,46 @@
                 </div>
                 <div class="portfolio-card__body">
                   <h2 class="portfolio-card__title">
-                    Проект <span lang="en">LAB</span>
+                    Проект
+                    <span lang="en">LAB</span>
                   </h2>
                   <p class="portfolio-card__text">Маркетинг</p>
                 </div>
               </a>
             </li>
             <li class="portfolio-card">
-              <a class="links" href="">
+              <a class="links link__portfolio" href="">
                 <div class="portfolio-card__aside">
-                  <img
-                    class="images"
-                    src="./images/work.jpg"
-                    alt="Руки на открытом ноутбуке. Картинка на экране ноутбука с надписью: Growing Business"
-                    width="370"
-                    height="294"
-                  />
+                  <picture>
+                    <source
+                      srcset="
+                        ./images/portfolio-project9-d.jpg    1x,
+                        ./images/portfolio-project9-d@2x.jpg 2x
+                      "
+                      media="(min-width: 1200px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project9-t.jpg    1x,
+                        ./images/portfolio-project9-t@2x.jpg 2x
+                      "
+                      media="(min-width: 768px)"
+                    />
+                    <source
+                      srcset="
+                        ./images/portfolio-project9-m.jpg    1x,
+                        ./images/portfolio-project9-m@2x.jpg 2x
+                      "
+                      media="(max-width: 767px)"
+                    />
+
+                    <img
+                      class="images"
+                      src="./images/portfolio-project9-d.jpg"
+                      alt="Руки на открытом ноутбуке. Картинка на экране ноутбука с надписью: Growing Business"
+                    />
+                  </picture>
+
                   <div class="overlay">
                     <p class="overlay__text">
                       Lorem ipsum, dolor sit amet consectetur adipisicing elit.
@@ -332,73 +585,77 @@
 
     <footer class="footer">
       <div class="container">
-        <div class="footer__thumb">
-          <!-- Лого -->
-          <a class="links logo logo--footer" href="./index.html" lang="en"
-            ><span class="logo--accent">Web</span>Studio</a
-          >
+        <div class="footer-tablet">
+          <div class="footer__thumb">
+            <!-- Лого -->
+            <a class="links logo logo--footer" href="./index.html" lang="en">
+              <span class="logo--accent">Web</span>
+              Studio
+            </a>
 
-          <!-- адрес -->
-          <address>
-            <a
-              class="links footer__address"
-              href="https://goo.gl/maps/VM6gPYjPhEStrqMR6"
-              target="_blank"
-              rel="noopener, nofollow, noreferrer"
-              >г. Киев, пр-т Леси Украинки, 26</a
-            >
+            <!-- адрес -->
+            <address>
+              <a
+                class="links footer__address"
+                href="https://goo.gl/maps/VM6gPYjPhEStrqMR6"
+                target="_blank"
+                rel="noopener, nofollow, noreferrer"
+              >
+                г. Киев, пр-т Леси Украинки, 26
+              </a>
 
-            <!-- Почта и телефон -->
-            <ul class="lists">
-              <li class="footer__item">
-                <a class="links footer__link" href="mailto:info@devstudio.com">
-                  info@devstudio.com
+              <!-- Почта и телефон -->
+              <ul class="lists">
+                <li class="footer__item">
+                  <a class="links footer__link" href="mailto:info@devstudio.com"
+                    >info@devstudio.com</a
+                  >
+                </li>
+                <li class="footer__item">
+                  <a class="links footer__link" href="tel:+380961111111"
+                    >+38 096 111 11 11</a
+                  >
+                </li>
+              </ul>
+            </address>
+          </div>
+          <div class="footer__thumb footer__thumb--social">
+            <strong class="footer__text">Присоединяйтесь</strong>
+            <ul class="lists social">
+              <li class="social__item">
+                <a class="link__social link__social--footer" href="">
+                  <svg class="icon__social">
+                    <use href="./images/icons.svg#instagram"></use>
+                  </svg>
                 </a>
               </li>
-              <li class="footer__item">
-                <a class="links footer__link" href="tel:+380961111111"
-                  >+38 096 111 11 11</a
-                >
+              <li class="social__item">
+                <a class="link__social link__social--footer" href="">
+                  <svg class="icon__social">
+                    <use href="./images/icons.svg#twitter"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="link__social link__social--footer" href="">
+                  <svg class="icon__social">
+                    <use href="./images/icons.svg#facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="social__item">
+                <a class="link__social link__social--footer" href="">
+                  <svg class="icon__social">
+                    <use href="./images/icons.svg#linkedin"></use>
+                  </svg>
+                </a>
               </li>
             </ul>
-          </address>
-        </div>
-        <div class="footer__thumb footer__thumb--social">
-          <strong class="footer__text">Присоединяйтесь</strong>
-          <ul class="lists social">
-            <li class="social__item">
-              <a class="social__link social__link--footer" href="">
-                <svg class="icon__social">
-                  <use href="./images/symbol-defs.svg#instagram"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item">
-              <a class="social__link social__link--footer" href="">
-                <svg class="icon__social">
-                  <use href="./images/symbol-defs.svg#twitter"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item">
-              <a class="social__link social__link--footer" href="">
-                <svg class="icon__social">
-                  <use href="./images/symbol-defs.svg#facebook"></use>
-                </svg>
-              </a>
-            </li>
-            <li class="social__item">
-              <a class="social__link social__link--footer" href="">
-                <svg class="icon__social">
-                  <use href="./images/symbol-defs.svg#linkedin"></use>
-                </svg>
-              </a>
-            </li>
-          </ul>
+          </div>
         </div>
         <form class="js-speaker-form">
-          <label
-            ><strong class="footer__text">Подпишитесь на рассылку</strong>
+          <label class="js-speaker-form__label">
+            <strong class="footer__text">Подпишитесь на рассылку</strong>
             <input
               class="js-speaker-form__input"
               type="email"
@@ -409,13 +666,21 @@
           <button class="button__send" type="submit">
             Подписаться
             <svg class="icon__send icon__send--append">
-              <use href="./images/symbol-defs.svg#send"></use>
+              <use href="./images/icons.svg#send"></use>
             </svg>
           </button>
         </form>
       </div>
     </footer>
+
     <script src="./js/header.js"></script>
-    <script src="./js/main.js"></script>
+
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+      integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="js/mobile-menu.js"></script>
   </body>
 </html>
