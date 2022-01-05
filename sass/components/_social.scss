@@ -1,3 +1,21 @@
+.social__menu {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 10px;
+
+    @media screen and (min-width: 768px) {
+        display: none;
+    }
+}
+
+.social__menu-item {
+    &+&::before {
+        content: '';
+
+        border-right: 1px solid $line-social-color;
+    }
+}
+
 .social {
     display: flex;
     justify-content: center;
@@ -6,28 +24,5 @@
 .social__item {
     &:not(:last-child) {
         margin-right: 10px;
-    }
-}
-
-.social__link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    color: $social-passive-color;
-    transition: color $duration $function, background-color $duration $function;
-
-    &--footer {
-        color: $current-light-color;
-        background-color: $social-passive-background-color;
-        transition: background-color $duration $function;
-    }
-
-    &:hover,
-    &:focus {
-        color: $current-light-color;
-        background-color: $accent-color;
-    }
-}
+       }
+       }

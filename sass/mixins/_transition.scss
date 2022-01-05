@@ -1,0 +1,2 @@
+@mixin transition($type, $duration, $function) {
+    transition: $type $duration $function;}

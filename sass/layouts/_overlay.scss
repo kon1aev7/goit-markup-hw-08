@@ -5,7 +5,7 @@
     display: flexbox;
     align-items: center;
     width: 100%;
-    height: 294px;
+    height: 100%;
 
     background-color: $overlay-card-color;
 
@@ -47,8 +47,8 @@
     margin: 0;
     padding: 63px 24px;
     color: $current-light-color;
-    font-size: 18px;
-    line-height: 1.56;
-    letter-spacing: 0.03em;
-    text-align: left;
+font-size: 18px;
+line-height: 1.56;
+letter-spacing: 0.03em;
+text-align: left;
 }

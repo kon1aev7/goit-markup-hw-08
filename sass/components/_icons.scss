@@ -1,16 +1,29 @@
-%navigation__icon {
-    margin-right: 10px;
-    fill: currentColor;
+.icon__menu {
+    @include icon(40px, 40px);
+    @include transition(color, $duration, $function);
+}
+
+.icon__menu-close {
+    @include icon(40px, 40px);
+    @include transition(color, $duration, $function);
 }
 
 .envelope {
-    @extend %navigation__icon;
     @include icon(16px, 12px);
+    margin-right: 8px;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .smartphone {
-    @extend %navigation__icon;
     @include icon(10px, 16px);
+    margin-right: 8px;
+
+    @media screen and (max-width: 767px) {
+        display: none;
+    }
 }
 
 .antenna,
@@ -55,10 +68,10 @@
         transition: fill $duration $function;
     }
 
-    .modal__input:focus-visible+&,
-    .modal__input:focus+&,
-    .modal__textarea:focus-visible+&,
-    .modal__textarea:focus+& {
+    .form__input:focus-visible+&,
+    .form__input:focus+&,
+    .form__textarea:focus-visible+&,
+    .form__textarea:focus+& {
         fill: $accent-color;
     }
 }
@@ -76,14 +89,14 @@
         transition-duration: $duration;
         transition-timing-function: $function;
 
-        .modal__checkbox:checked+& {
+        .form__checkbox:checked+& {
             border: 2px solid transparent;
             background-color: $accent-color;
         }
 
-        .modal__label:last-of-type:hover>&,
-        .modal__label:last-of-type:focus-within>& {
-            border: 2px solid $accent-color;
-        }
-    }
+        .form__label:last-of-type:hover>&,
+.form__label:last-of-type:focus-within>& {
+    border: 2px solid $accent-color;
+}
+}
 }
